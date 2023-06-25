@@ -1,0 +1,19 @@
+{% load socialaccount %}
+
+
+<div class="container d-flex justify-content-center align-items-center m-3">
+  <div>
+    <h4 class="text-center w-5">Or Login with</h4>
+    <!-- Facebook Login Button -->
+    <a href="{% provider_login_url 'facebook' method='oauth2' %}" class="btn btn-primary btn-block btn-lg">
+      <i class="fa-brands fa-facebook"></i>
+      Facebook
+    </a>
+
+    <!-- Google Login Button -->
+    <a href="{% provider_login_url 'google' %}" class="btn btn-danger btn-block btn-lg">
+      <i class="fa-brands fa-google"></i>
+      Google
+    </a>
+  </div>
+</div>
