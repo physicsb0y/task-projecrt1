@@ -35,11 +35,12 @@
                     <a class="nav-link">User Profile</a>
                     </li>
                 </ul>
-            <form class="d-flex" role="search">
+            <form class="d-flex" action="{% url 'blog_post_search' %}" method="get">
                 {% csrf_token %}
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search"  name="keyword" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
+
 
             <ul class="navbar-nav m-auto me-auto mb-2 mb-lg-0">
                 

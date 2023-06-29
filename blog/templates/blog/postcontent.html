@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+
+
+{% block title %}
+    Blog
+{% endblock title %}
+    
+
+
+{% block content %}
+    <div class="container">
+        <div>
+            <div>
+                <h5 class=" mt-3">{{post.title}}</h5>
+
+                <p class="text-center mt-5">{{post.content}}</p>
+            </div>
+        </div>
+
+
+        {% if user == post.author or perms.blog.change_blogpost or user.has_perms.blog.change_blogpost %}
+
+        <a class="btn btn-primary " href="{% url 'post_update' post.id %}">Update</a>
+
+        {% endif %}
+    </div>
+{% endblock content %}
+    

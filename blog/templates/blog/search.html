@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+
+
+{% block title %}
+    Search page
+{% endblock title %}
+    
+
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Search Results</h2>
+
+    <p class="text-center">Search Query: {{ query }}</p>
+
+    
+    {% if posts %}
+    <ul>
+
+
+        <div class="card mt-2">
+        <div class="card-body d-flex flex-row justify-content-between">
+            <div>
+                <a class="link-primary text-decoration-none" href=""><h5 class="card-title">{% for post in posts %}
+                                        {{ post.title }}
+                                    {% endfor %}
+                            </h5>
+                </a>
+            </div>
+        </div>
+        </div>
+        
+        
+            
+    </ul>
+    {% else %}
+
+        <p>No posts found.</p>
+        
+    {% endif %}
+</div>
+{% endblock content %}
+    
